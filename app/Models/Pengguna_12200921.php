@@ -13,4 +13,10 @@ class Pengguna_12200921 extends Model
     protected $returnType           = 'array';
     protected $protectFields        = true;
     protected $allowedFields        = ['nama', 'password'];
+
+    public function cekLogin($user, $pass)
+    {
+        return $this->where('nama', $user)
+            ->where('password', md5($pass))->first();
+    }
 }
