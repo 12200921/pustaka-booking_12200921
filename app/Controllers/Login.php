@@ -2,7 +2,10 @@
 
 namespace App\Controllers;
 
+
 use App\Models\Pengguna_12200921;
+use Config\Services;
+
 
 class Login extends BaseController
 {
@@ -28,7 +31,7 @@ class Login extends BaseController
 
         if ($v == false) {
             $this->session->setFlashdata('validator', $this->validator);
-            return redirect()->to('/Login');
+            return redirect()->to('/login');
         } else {
 
             $vl = (new Pengguna_12200921())->cekLogin($email, $sandi);

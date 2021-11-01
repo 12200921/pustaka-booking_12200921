@@ -29,7 +29,7 @@
                 <div class="form-floating">
                     <input id="txtPass" class="form-control" placeholder="Password" value="<?= $sandi ?? '' ?>" type="password" name="sandi" />
                     <label for="txtPass">Kata Sandi</label>
-                    <?php if ($vd == null ? '' : $vd->getError('email') ) { ?>
+                    <?php if ($vd == null ? '' : $vd->getError('sandi') ) { ?>
                         <div class="alert alert-danger">
                             <?php
                             echo $vd->getError('sandi');
