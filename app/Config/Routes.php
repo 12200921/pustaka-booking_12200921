@@ -43,7 +43,12 @@ $routes->get('/logout', function(){
     return redirect()->to('/login');
 });
 
-
+$routes->get('/pengguna-list', 'PenggunaController_12200921::index', ['filter'=>'auth']);  
+$routes->get('/pengguna', 'PenggunaController_12200921::form', ['filter'=>'auth']);
+$routes->get('/pengguna/(:num)', 'PenggunaController_12200921::edit/$1', ['filter'=>'auth']);
+$routes->post('/pengguna', 'PenggunaController_12200921::simpan', ['filter'=>'auth']);  
+$routes->patch('/pengguna', 'PenggunaController_12200921::patch', ['filter'=>'auth']);
+$routes->delete('/pengguna', 'PenggunaController_12200921::delete', ['filter'=>'auth']);
 
 /*
  * --------------------------------------------------------------------
